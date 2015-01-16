@@ -5,3 +5,4 @@ RemoteSystemsTempFiles
 *.class
 out
 target
+*.jar
