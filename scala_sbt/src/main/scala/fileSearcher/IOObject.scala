@@ -1,5 +1,8 @@
 package fileSearcher
 
+import java.io.File
+
 trait IOObject {
-  val name: String;
+  val file: File
+  val name = file.getName()
 }
