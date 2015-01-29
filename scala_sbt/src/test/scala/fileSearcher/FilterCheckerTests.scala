@@ -8,7 +8,7 @@ class FilterCheckerTests extends FlatSpec {
     val matchingFile = new FileObject("match")
     val listOfFiles = List(matchingFile, new FileObject("random"))
     
-    val matchedFiles = new FilterChecker("match").findMatchedFiles(listOfFiles)
+    val matchedFiles = FilterChecker("match") findMatchedFiles listOfFiles
     
     assert(List(matchingFile) == matchedFiles)
   }
@@ -17,7 +17,7 @@ class FilterCheckerTests extends FlatSpec {
   "not return that directory" in {
     val matchingDirectory = new DirectoryObject("match")
     val listOfFiles = List(matchingDirectory, new FileObject("random"))
-    val matchedFiles = new FilterChecker("match").findMatchedFiles(listOfFiles)
+    val matchedFiles = FilterChecker("match") findMatchedFiles listOfFiles 
     
     assert(matchedFiles.length == 0)
   }
