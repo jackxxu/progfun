@@ -45,4 +45,10 @@ class TestRational extends FlatSpec {
      val r1 = new Rational(1, 3)
      assert(r1.neg == new Rational(-1, 3))
    }
+
+   "Rational add method when passed in another object" should
+   "return the simplified version of the value" in {
+     val r1 = new Rational(1, 3)
+     assert(r1.add(r1) == new Rational(2, 3))
+   }
 }

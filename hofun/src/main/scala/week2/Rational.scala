@@ -2,8 +2,8 @@ package week2
 
 class Rational(x: Int, y: Int) {
   
-  def numer = x
-  def denum = y
+  def numer = x / gcd(x, y)
+  def denum = y / gcd(x, y)
 
   def add(r: Rational) =
     new Rational(numer * r.denum + denum * r.numer, denum*r.denum)
@@ -21,4 +21,6 @@ class Rational(x: Int, y: Int) {
     case that: Rational => that.numer == numer && that.denum == denum
     case _ => false
   }
+  
+  private def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 }
