@@ -7,7 +7,13 @@ class Rational(x: Int, y: Int) {
 
   def add(r: Rational) =
     new Rational(numer * r.denum + denum * r.numer, denum*r.denum)
-  
+ 
+  def sub(r: Rational) =
+    add(r.neg)
+
+  def neg =
+    new Rational(-numer, denum)
+
   override def toString =
     numer + "/" + denum
     

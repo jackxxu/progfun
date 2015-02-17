@@ -22,8 +22,27 @@ class TestRational extends FlatSpec {
      val r1 = new Rational(1, 3)
      val r2 = new Rational(2, 3)
      val r3 = new Rational(9, 9)
-     assert(r1.add(r2).toString == "9/9")
      assert(r1.add(r2) == r3)
    }
-   
+
+   "Rational sub method when passed in another object" should
+   "return the difference of the values" in {
+     val r1 = new Rational(1, 3)
+     val r2 = new Rational(2, 3)
+     assert(r2.sub(r1) == new Rational(3, 9))
+   }
+
+   "Rational sub method when passed in two subtractions" should
+   "return the proper value" in {
+     val x = new Rational(1,3)
+     val y = new Rational(5,7)
+     val z = new  Rational(3,2)
+     assert(x.sub(y).sub(z) == new Rational(-79, 42))
+   }
+
+   "Rational neg method when passed in another object" should
+   "return the negative of the value" in {
+     val r1 = new Rational(1, 3)
+     assert(r1.neg == new Rational(-1, 3))
+   }
 }
