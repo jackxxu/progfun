@@ -51,4 +51,12 @@ class TestRational extends FlatSpec {
      val r1 = new Rational(1, 3)
      assert(r1.add(r1) == new Rational(2, 3))
    }
+
+   "Rational less method when passed in another object" should
+   "return a boolean value that indicates if it is less than the other object" in {
+     val r1 = new Rational(1, 3)
+     val r2 = new Rational(1, 4)
+     assert(r2.less(r1))
+   }
+
 }
