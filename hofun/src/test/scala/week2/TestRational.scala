@@ -59,4 +59,11 @@ class TestRational extends FlatSpec {
      assert(r2.less(r1))
    }
 
+   "Rational max method when passed in another object" should
+   "return a Rational object that is the larger of the new object and itself" in {
+     val r1 = new Rational(1, 3)
+     val r2 = new Rational(1, 4)
+     assert(r2.max(r1) == r1)
+   }
+
 }

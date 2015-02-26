@@ -1,7 +1,7 @@
 package week2
 
 class Rational(x: Int, y: Int) {
-  
+  require( y != 0, "the denomination can not be zero")
   val numer = x / gcd(x, y)
   val denum = y / gcd(x, y)
 
@@ -22,7 +22,9 @@ class Rational(x: Int, y: Int) {
     case _ => false
   }
   
-  def less(that: Rational) = true
+  def less(that: Rational) = numer * that.denum < that.numer * denum
+  
+  def max(that: Rational) = if (this.less(that)) that else this
   
   private def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 }
